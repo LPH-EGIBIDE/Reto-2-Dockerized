@@ -3,3 +3,4 @@
 .sites-available/*
 .ssl/*
 .env
+.DS_Store
