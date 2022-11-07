@@ -1,6 +1,11 @@
-.vscode/*
-.htdocs/*
-.sites-available/*
-.ssl/*
+
 .env
 .DS_Store
+sites-available/
+!sites-available/README.md
+
+ssl/
+!ssl/README.md
+
+htdocs/
+!htdocs/README.md
