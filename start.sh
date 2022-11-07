@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-for i in $(ls -d /var/www); do
+for i in $(ls -d /var/www/*/ | cut -f4 -d'/'); do
     if [ ! -f /etc/apache2/sites-available/$i.conf ]; then 
         echo "Creating vhost for $i" 
         echo "<VirtualHost *:80>" > /etc/apache2/sites-available/$i.conf && \
@@ -19,7 +19,7 @@ for i in $(ls -d /var/www); do
 done
 
 mkdir -p /etc/apache2/ssl
-for i in $(ls -d /var/www); do
+for i in $(ls -d /var/www/*/ | cut -f4 -d'/'); do
     if [ ! -f /etc/apache2/ssl/$i.key ] || [ ! -f /etc/apache2/ssl/$i.crt ]; then
         echo "Creating ssl cert for $i"
         openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/$i.key -out /etc/apache2/ssl/$i.crt -subj "/C=ES/ST=Vitoria/L=Alava/O=ImAleex/CN=$i"
