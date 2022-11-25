@@ -5,6 +5,7 @@ services:
         command: --default-authentication-plugin=mysql_native_password
         volumes:
             - db_data:/var/lib/mysql
+            - ./aergibide.sql:/docker-entrypoint-initdb.d/schema.sql:ro
         restart: always
         ports:
             - 3306:3306
@@ -15,8 +16,6 @@ services:
             MYSQL_PASSWORD: ${MYSQL_USER_PASSWORD}
         networks:
             - default_lph
-        ports:
-            - 3306:3306
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         restart: always
@@ -40,6 +39,8 @@ services:
             - db
         networks:
             - default_lph
+        env_file:
+            - .env
     reverse-proxy:
         image: nginx
         ports:
