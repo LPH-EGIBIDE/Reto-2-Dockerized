@@ -11,7 +11,12 @@ RUN apt-get update && apt-get install -y openssl apache2 && \
 RUN apt update -y && apt install -y php8.0 libapache2-mod-php8.0 php8.0-mysql php8.0-common php8.0-curl
 
 # Enable SSL
-RUN a2enmod ssl
+RUN a2enmod ssl && a2enmod rewrite
+
+# Set php.ini max upload size to 100MB and max post size to 100MB
+RUN sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 100M/g' /etc/php/8.0/apache2/php.ini
+RUN sed -i 's/post_max_size = 8M/post_max_size = 100M/g' /etc/php/8.0/apache2/php.ini
+
 
 # Copy script and make it executable
 COPY ./start.sh /usr/local/bin/start.sh
