@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^user/([-\w]+)$ profile.php?id=$1 [L]
+RewriteRule ^post/([-\w]+)$ post.php?id=$1 [L]
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+ErrorDocument 404 /404.php
+ErrorDocument 403 /404.php

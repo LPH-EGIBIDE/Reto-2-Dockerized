@@ -1,0 +1,202 @@
+.main .relleno{
+    justify-content: unset;
+    margin: unset;
+}
+
+/*Perfil*/
+.cajaPerfil{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+.cajaPerfilUp{
+    background-color: #F0DED3;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "avatar nombreUsu nombreUsu ranking"
+    "avatar fechaMi fechaMi stats";
+
+    width: 100%;
+}
+#avatar{
+    grid-area: avatar;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100px;
+    width: 100px;
+
+    border-radius: 100%;
+
+    margin: 2em 0.5em 2em 2em;
+}
+.nombreUsuario{
+    grid-area: nombreUsu;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+}
+.ultPregunta{
+    grid-area: fechaMi;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#rango{
+    grid-area: ranking;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.stats{
+    grid-area: stats;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5em
+}
+.cajaPerfilUp span, .cajaPerfilUp p{
+    font-size: 20px;
+    padding: 0.5em;
+}
+span.fechaMi {
+    padding: 0 0 0 0.2em;
+}
+
+.cajaPerfilDown{
+    background-color: white;
+    
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "uPre uPre uPre uPre"
+    "op op op op";
+
+    width: 100%;
+}
+.descripcionUsuario{
+    grid-area: uPre;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1em;
+}
+.navPerfil{
+    grid-area: op;
+    display: flex;
+    flex-direction: row;
+    background-color: #D06320;
+}
+.navOpciones{
+    display: flex;
+    list-style: none;
+    margin-bottom: 3px;
+    padding: 7px;
+}
+
+.navOpciones a{
+    text-decoration: none;
+    padding: 3px;
+    margin: 0.5em;
+    color: white;
+}
+
+.navOpciones a:hover, .navOpciones a.active {
+    background-color: #FE8F4B;
+    font-weight: bold;
+}
+
+/*Contenido perfil*/
+.contenidoLista{
+    background-color: white;
+    width: 100%;
+    margin-top: 2em;
+}
+.contenedorLista{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 100%;
+    grid-template-areas: "identi texto";
+    width: 100%;
+    margin: 0.5em;
+}
+.contenedorIden{
+ grid-area: identi;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.identificadoAva{
+ height: 60px;
+ width: 60px;
+ border-radius: 100%;
+}
+.contenidoIzq{
+    grid-area: texto;
+    display: flex;
+    flex-direction: column;
+}
+.listContent{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.listContent li{
+    margin: 0.2em;
+    color: black;
+}
+.contenedorBoton{
+    background-color: #D06320;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 2em;
+}
+.separador{
+    margin-right: 20px;
+}
+
+.rellenoPosts{
+    padding: 1em;
+    margin: unset;
+}
+
+#mas{
+    background-color: white;
+    border-radius: 6px;
+    padding: 8px 16px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black; 
+    border: 2px solid #FE8F4B;
+}
+#mas:hover{
+    background-color: #FE8F4B;
+    color: white;
+}
+
+/*Texto*/
+.ultPregunta, .descripcionUsuario, .tituPregunta{
+    font-weight: bold;
+}
+.tituPregunta{
+    font-size: 22px;
+}
+
+.decripPre{
+    font-size: 12px;
+}
+

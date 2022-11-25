@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital@1&family=Fira+Sans&family=Oxygen&family=Roboto&family=Ubuntu&display=swap');
+@import 'navigation.css';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    font: 14px / 1.4 sans-serif;
+    background-color: #D5D5D5;
+    height: 100vh;
+}
+
+img.mainLogo{
+    width: 400px;
+}
+
+.logoMobile{
+    display: none;
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: 25% 7% auto 8%;
+    grid-template-areas:
+    "head head head"
+    "nav nav nav"
+    "main main main"
+    "foot foot foot";
+    height: 100%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: main;
+    width: 80%;
+    margin: auto;
+}
+.main .relleno{
+    height: 90%;
+    margin: 2em auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centrado{
+    display: flex;
+    justify-content: center;
+}
+
+.unstyledLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.overflow-1{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.hidden{
+    display: none !important;
+}
+
+#fileList li {
+    padding: 0.2em;
+    list-style: none;
+}
+
+/* Colores iconos */
+.green{
+    color: green;
+}
+
+.yellow{
+    color: yellow;
+}
+
+.red{
+    color:red;
+}
+
+/* Skeletons */
+.c-skeleton__text, .c-skeleton__figure {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: placeHolderShimmer;
+    animation-name: placeHolderShimmer;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    background-color: #e7e7e9;
+    background-image: linear-gradient(to right, #eee 8%, #e7e7e9 18%, #eee 33%);
+    background-size: 800px 104px;
+}
+
+.c-skeleton__figure {
+    width: 100%;
+    height: 100%;
+}
+
+.c-skeleton__text {
+    height: 0.8em;
+    width: 65%;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+.c-skeleton__text--small-height {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.c-skeleton__text--inline {
+    display: inline-block;
+}
+
+.c-skeleton__text--full {
+    width: 100%;
+    height: 100%;
+}
+
+.c-skeleton__text--title {
+    width: 50%;
+    height: 100%;
+}
+
+.c-skeleton__text--big {
+    width: 75%;
+}
+
+.c-skeleton__text--bigger {
+    width: 85%;
+}
+
+.c-skeleton__text--small {
+    width: 55%;
+}
+
+.c-skeleton__text--smaller {
+    width: 45%;
+}
+
+.c-skeleton__text--tiny {
+    width: 35%;
+}
+
+/* Skeleton keyframes */
+@-webkit-keyframes placeHolderShimmer {
+    0% {
+        background-position: -468px 0;
+    }
+    100% {
+        background-position: 350px 0;
+    }
+}
+
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: -468px 0;
+    }
+    100% {
+        background-position: 350px 0;
+    }
+}
+
+/* Media queries */
+@media screen and  (max-width: 900px) {
+    .main, .main .relleno{
+        width: 100%;
+    }
+ }
+
+@media only screen and  (min-width: 640px) {
+
+    .opUsuario{
+        left: 0;
+    }
+
+}
+@media only screen and (max-width: 640px) {
+
+    .container{
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: 7% auto 13%;
+        grid-template-areas:
+        "nav nav nav"
+        "main main main"
+        "foot foot foot";
+    }
+    .navegador{
+        font-size: 0.8em;
+    }
+    #notifiText{
+        display: none;
+    }
+    .opUsuario{
+        right: 0;
+    }
+
+    #username{
+        display: none;
+    }
+
+    .cabecera{
+        display: none;
+    }
+    .navegador .altLogo{
+         display: block;
+     }
+    .logoMobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pie .fotoI .version{
+        display: none;
+    }
+
+    .conTags p, .conPreguntaTitu .preguntaTitu {
+        font-size: 0.8em !important;
+    }
+}

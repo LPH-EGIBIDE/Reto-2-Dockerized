@@ -1,0 +1,99 @@
+@import "miPerfil.css";
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    grid-area: main;
+    margin: auto;
+    width: 80%;
+}
+
+.principal .relleno{
+    margin-top: 2em;
+    background-color: #F0DED3;
+    width: 100%;
+}
+
+/* Search bar */
+
+#cajaTitulo {
+    text-align: left;
+    font-size: 24px;
+    font-weight: 800;
+    margin: 1em 0 0 1em;
+}
+
+.cajaBuscador{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    column-gap: 1em;
+    padding: 2em;
+    width: 100%;
+}
+
+.cajaBuscador input, .cajaBuscador select{
+    padding: .2em;
+    border: 3px solid #ccc;
+    transition: .5s;
+    outline: none;
+    overflow-y: hidden;
+}
+
+.cajaBuscador input:focus {
+    border: 3px solid #FE8F4B;
+}
+
+.cajaBuscador input:focus::placeholder {
+    transition: .3s;
+    color: transparent;
+}
+
+.listaTopics{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.answerButton {
+    background: transparent;
+    border-radius: 6px;
+    padding: 8px 16px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    border: 2px solid #FE8F4B;
+}
+
+#crearPost {
+    margin-left: auto;
+}
+
+.answerButton:hover {
+    background-color: #FE8F4B;
+    color: white;
+}
+
+/* Media queries */
+@media screen and (max-width: 780px) {
+    .principal, .principal .relleno{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .principal, .principal .relleno{
+        width: 100%;
+    }
+}

@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^id/([-\w]+)$ viewAttachment.php?fileId=$1 [L]
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

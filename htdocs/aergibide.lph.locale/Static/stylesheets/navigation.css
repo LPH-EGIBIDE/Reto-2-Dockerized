@@ -1,0 +1,317 @@
+/* Cabecera */
+.cabecera{
+    grid-area: head;
+    background-image: url("/assets/img/login_bg.jpg");
+    background-position:  100%;
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.navegador, footer{
+    background-color: #D06320;
+}
+
+/* Navegador */
+.navegador{
+    grid-area: nav;
+    position: sticky;
+    top: 0;
+    font-weight: 500;
+    font-size: 1.05em;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.navegador .altLogo{
+    display: none;
+    height: 40px;
+    margin-right: auto;
+}
+
+#userLogo{
+    height: 26px;
+    border-radius: 50%;
+}
+
+.userProfile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.navegador .navI{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-right: 1em;
+}
+
+.navegador .navD{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#notificationContainer a{
+    text-decoration: none;
+    color: black;
+}
+
+.listas{
+    margin: 3px 3px 0 3px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 3px;
+}
+
+.listas li{
+    position: relative;
+    padding: 10px;
+    color: aliceblue;
+}
+
+.navLink{
+    text-decoration: none;
+    color:#fff;
+}
+
+.navegador li:hover{
+    background-color: #FE8F4B;
+    font-weight: bold;
+}
+
+/* Menú desplegable de usuario */
+.opUsuario{
+    display:none;
+    position:absolute;
+    background-color: #FE8F4B;
+    margin-top: 0;
+    padding: 0;
+    z-index: 2;
+    border-radius: 4% 4% 4% 4%;
+    margin-left: 0;
+}
+
+.opUsuario li{
+    padding:0;
+    margin: 0.4em;
+    list-style: none;
+}
+
+.opUsuario  li:hover > a{
+    width: 120px;
+}
+
+.opUsuario  li a{
+    width: 150px;
+    margin: 0 0 0 5px;
+    display:block;
+    color: #2c2525;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.navD  li:hover > ul{
+    display:block;
+    width: 150px;
+    top: 3.1em;
+}
+
+.navD  li:hover::after{
+    border-color: #fff transparent transparent transparent;
+}
+
+.navD .opUsuario span{
+    height: 15px;
+    width: 3px;
+    position: absolute;
+    top: 6px;
+    left: 5px;
+}
+
+.navD li ul li {
+    background-color: #e6e6e6;
+    padding: 0.5em;
+    border-radius: 4%;
+}
+
+.navD li ul li:hover {
+    background-color: #FE8F4B;
+}
+
+/* Menú desplegable de notificaciones */
+.navD li > .hoverElement{
+    display:none;
+    position:absolute;
+    background-color: #D06320;
+    margin-top: 0;
+    padding: 0;
+    z-index: 2;
+    right: 0;
+}
+
+.navD  li > .hoverElement p{
+    margin: 0;
+    display:block;
+    color: black;
+}
+
+.navD  li:hover > .hoverElement{
+    display:block;
+    width: 250px;
+    height: 250px;
+    top: 2.5em;
+    border: 0.5px solid #d06320;
+    background-color: #ababab;
+}
+
+.listaNoti {
+    background-color: #FE8F4B !important;
+}
+
+.navD .listaNoti span{
+    height: 15px;
+    width: 3px;
+    position: absolute;
+    top: 6px;
+    left: 5px;
+}
+
+.navD li .hoverElement{
+    background-color: #FE8F4B;
+    border-radius: 4%;
+}
+
+.contenidoNoti{
+    margin: 20px auto 0;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 4%;
+    padding: 6px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    /* Disable scrollbar for IE, Edge and Firefox*/
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Disable scrollbar for Chrome, Safari and Opera */
+.contenidoNoti::-webkit-scrollbar {
+    display: none;
+}
+
+.navegador h3,h5{
+    color: black;
+    font-weight: bold;
+    margin-top: 4px;
+    margin-left: 3px;
+    margin-bottom: 2px;
+    text-align: center;
+    background: white;
+    border-radius: 4%;
+}
+
+.notificacion {
+    width: 100%;
+    margin-top: 6px;
+    color: black;
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    grid-template-rows: repeat(2,auto);
+    grid-template-areas:
+  "icon msg msg msg msg"
+  "time time time time delete";
+    background-color: white !important;
+    border-radius: 5px;
+    box-shadow: 1px 1px 7px 1px #000;
+}
+
+.notifiIcon, .mensaje{
+    border-bottom: grey 0.5px solid;
+}
+
+.notifiIcon{
+    grid-area: icon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.mensaje{
+    grid-area: msg;
+    font-size: 12px;
+    padding: 1em;
+}
+
+.fecha{
+    grid-area: time;
+    display: flex;
+    flex-direction: row;
+    background-color: white !important;
+    padding: 0.5em;
+}
+
+.fecha p{
+    font-size: 12px;
+}
+
+.basura{
+    grid-area: delete;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+}
+
+/* Footer */
+footer{
+    grid-area: foot;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+}
+
+footer .listaD{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+footer .fotoI{
+    margin-left: 30px;
+    color: #fff;
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer .fotoI img{
+    height: 40px;
+}
+
+.listaD li:hover{
+    background-color: #D06320;
+}

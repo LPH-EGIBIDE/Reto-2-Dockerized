@@ -1,0 +1,106 @@
+
+.cajaRespuesta {
+    margin: 1em 0;
+    width: 100%;
+    display: block;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px 1px #000;
+}
+.answerForm {
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+        "parte1 parte1"
+        "descrip descrip"
+        "botones botones";
+        gap: 2%;
+}
+
+.contenedorArriba{
+    grid-area: parte1;
+    display: flex;
+    flex-direction: row;
+}
+
+.select{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.contenedorPregunta{
+    width: 100%;
+    margin-left: 1em;
+}
+
+.contenedorMedio{
+    grid-area: descrip;
+}
+
+.questionButtons{
+    grid-area: botones;
+    display: flex;
+    justify-content: center;
+}
+
+.answerForm textarea, .answerForm .questionText, .answerForm .select #tags {
+    padding: 5px;
+    width: 100%;
+    resize: none;
+    border: 3px solid #ccc;
+    transition: .3s;
+    outline: none;
+    overflow-y: hidden;
+}
+
+.answerForm textarea:focus, .answerForm .questionText:focus, .answerForm .select #tags:focus {
+    border: 3px solid #FE8F4B;
+}
+
+.answerForm textarea:focus::placeholder, .answerForm .questionText:focus::placeholder, .answerForm .select #tags:focus::placeholder {
+    transition: .3s;
+    color: transparent;
+}
+
+.añadirPre, .respuestaFile {
+    font-size: 15px;
+}
+
+.questionButtons input:last-child {
+    margin-left: 1em;
+}
+
+.añadirPre, .añadirDes, .tagsPre{
+    color: #FE8F4B;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.respuestaTitu {
+    font-size: 18px;
+    margin-bottom: .2em;
+}
+
+.questionButton {
+    background: transparent;
+    border-radius: .2em;
+    padding: .3em .6em;
+    text-align: center;
+    display: inline-block;
+    font-size: .7em;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    border: 2px solid #FE8F4B;
+}
+
+.questionButton:hover {
+    background-color: #FE8F4B;
+    color: white;
+}

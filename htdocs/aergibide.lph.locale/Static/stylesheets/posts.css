@@ -1,0 +1,221 @@
+/* Caja pregunta */
+.cajaPregunta {
+    margin-top: 7px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+ "tags tituloPre"
+ "textoPre textoPre"
+ "adjuntos adjuntos";
+
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px 1px #000
+}
+.conTags, .conPreguntaTitu, .conAdjunto, .conTextoPre, .conArchivos, .conAdjunto2, .conArchivosRe{
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+}
+.conTags p, .conPreguntaTitu .preguntaTitu{
+    font-size: 18px;
+}
+.conTags{
+    grid-area: tags;
+}
+.conPreguntaTitu{
+    grid-area: tituloPre;
+    margin: 0;
+}
+.conTextoPre{
+    grid-area: textoPre;
+}
+.conAdjunto{
+    grid-area: adjuntos;
+}
+.conArchivos{
+    grid-area: archivo;
+}
+.conTags,.conPreguntaTitu,.conTextoPre,.conTextoRes,.conAdjunto2,.conArchivosRe{
+    border-bottom: grey 0.5px solid;
+}
+
+/*Añadir respuesta*/
+#medio{
+    margin-top: 14px;
+    margin-bottom: 7px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#tituRes{
+    font-size: large;
+}
+
+.anadir{
+    background: transparent;
+    border-radius: 6px;
+    padding: 8px 16px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    border: 2px solid #FE8F4B;
+}
+
+.anadir:hover {
+    background-color: #FE8F4B;
+    color: white;
+}
+
+/*Caja respuestas */
+#contenedorRespuestas{
+    width: 100%;
+}
+
+.cajaRespuesta{
+    margin-top: 14px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+        "conTextoRes conTextoRes"
+        "conAdjunto2 conArchivosRe"
+        "contenedorAbajo contenedorAbajo";
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px 1px #000;
+}
+
+.conTextoRes{
+    grid-area: conTextoRes;
+}
+
+.textoRes{
+    margin: 0 auto;
+    padding: 2em;
+    width: 80%;
+}
+
+.skeletonRes{
+    margin-left: 3%;
+    padding: 0.5em;
+}
+
+.conAdjunto2{
+    grid-area: conAdjunto2;
+}
+
+.conArchivosRe{
+    grid-area: conArchivosRe;
+}
+
+.contenedorAbajo{
+    grid-area: contenedorAbajo;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.conUsuario{
+    display: flex;
+    margin: 2px;
+    padding: 3px;
+
+}
+
+.parteDrc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+}
+
+.star, .up{
+    margin: 2px;
+    padding: 3px;
+}
+
+.listaFicheros{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2em;
+    list-style: none;
+}
+
+.listaFicheros a{
+    text-decoration: none;
+}
+
+.publishedBy {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    align-items: center;
+}
+
+#agregarRespuesta{
+    margin: 1em 0;
+    width: 100%;
+    display: block;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.answerForm {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.answerForm textarea {
+    padding: 5px;
+    width: 100%;
+    resize: none;
+    border: 3px solid #ccc;
+    transition: .3s;
+    outline: none;
+    overflow-y: hidden;
+}
+
+.answerForm textarea:focus {
+    border: 3px solid #FE8F4B;
+}
+
+.answerForm textarea:focus::placeholder {
+    transition: .3s;
+    color: transparent;
+}
+
+.respuestaTitu, .respuestaFile {
+    font-size: 15px;
+}
+
+.answerButtons input:last-child {
+    margin-left: 1em;
+}
+
+.respuestaTitu, .respuestaFile {
+    color: #FE8F4B;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.respuestaTitu {
+    font-size: 18px;
+    margin-bottom: .2em;
+}
