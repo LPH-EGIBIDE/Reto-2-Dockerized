@@ -16,7 +16,7 @@ const EMAIL_API_KEY = "ESTA_EN_LA_DOCUMENTACION";
 
 const APP_ROOT = __DIR__ . '/';
 // !!!!!!!!!!!!!!! PONER EN FALSE EN PRODUCCION !!!!!!!!!!!!!!!!!!!!!
-const DEBUG_MODE = true;
+const DEBUG_MODE = false;
 
 if (DEBUG_MODE) {
     ini_set('display_errors', 1);
