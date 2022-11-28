@@ -55,7 +55,7 @@ try {
             try {
                 $answer = insertAnswer($content, $post, $user);
                 //Create a notification for the post owner
-                NotificationRepository::insertNotification(new NotificationEntity("Nueva respuesta en tu post", false, "/posts/$id", 0, $post->getAuthor()), $post->getAuthor());
+                NotificationRepository::insertNotification(new NotificationEntity("Nueva respuesta en tu post", false, "/post/$id", 0, $post->getAuthor()), $post->getAuthor());
                 echo json_encode(["status" => "success", "message" => "Respuesta insertada correctamente", "answerId" => $answer->getId()]);
             } catch (PostException $e) {
                 if (DEBUG_MODE){
